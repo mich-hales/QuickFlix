@@ -38,7 +38,7 @@ nav {
     padding: 20px;
 }
 
-h1 {
+#youtube-header {
     padding: 20px;
     font-size: 30px;
 }
@@ -69,4 +69,47 @@ form {
     align-items: center;
     margin: 20px;
     padding: 20px;
+}
+
+
+/* styling the watch list */
+.moviesList {
+    background-color: pink;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+    height: 40px;
+    font-weight: bold;
+    flex-wrap: wrap;
+    width: 325px;
+}
+
+.deleteTask {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    /* makes a circle */
+    border-radius: 50%;
+    background-color: black;
+    color: white;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 9px;
+}
+
+
+.pText {
+    text-transform: capitalize;
+}
+
+.watchList {
+    display: flex;
+    margin: 5px;
 }

@@ -2,8 +2,8 @@ var inputForm = document.querySelector('#input-form');
 
 
 
-
-$(document).ready(function() {
+// using jquery to get api data and display a movie trailer based on input
+function randomMovieOutput(movie) {
     var youtubeApiKEy = 'AIzaSyD5JdQlIa-kgrfw-LaRZKnqT5QVKgtvt_o'
     var video = '';
 
@@ -11,7 +11,8 @@ $(document).ready(function() {
         event.preventDefault();
    
         //  will get the user input when the item is searched for and add the word trailer to present trailers
-        var userInput = $('#search').val() + 'trailer';
+        var userInput =  movie + 'trailer';
+        // $('#search').val()
 
         videoSearch(youtubeApiKEy, userInput, 5)
     })
@@ -32,7 +33,11 @@ $(document).ready(function() {
             })
         })
     }
-})
+}
+
+randomMovieOutput();
+
+    
 
 // local storage for random movie output -- will chose another if the same
 // storage -- stores movie ideas to a list? 
@@ -42,13 +47,16 @@ $(document).ready(function() {
 // new name -- preview
 
 
-const inputVal = document.querySelector('.inputVal');
-const addTaskBtn = document.querySelector('.addListBtn');
-// const watchList = document.querySelector('.watchList');
-// const watchListItem = document.querySelector('.watchListItem');
 
-addTaskBtn.addEventListener('click', () => {
-    if(inputVal.value != 0) {
+
+// javascript for localstorage to save favorite movies of choice to their watch list
+
+const inputVal = document.querySelector('.userInput');
+const addTaskBtn = document.querySelector('.addListBtn');
+
+addTaskBtn.addEventListener('click', function() {
+
+    if (inputVal.value != 0) {
         let localItems = JSON.parse(localStorage.getItem('localItem'))
 
         if (localItems === null) {
@@ -66,22 +74,27 @@ addTaskBtn.addEventListener('click', () => {
 function showList() {
     let outPut = '';
     let taskListShow = document.querySelector('.watchListItem');  
-    let localItems = JSON.parse(localStorage.getItem('localItem'))
-
+    let localItems = JSON.parse(localStorage.getItem('localItem'));
+    var taskList = [];
+ 
     if (localItems === null) {
-        taskList = []
+        console.log('error')
     } else {
-        taskList = localItems;
+        taskList = localItems
+        console.log('success')
     }
+
     taskList.forEach((data, index) => {
         outPut += `
-        <div class="theMoviesList">
+        <div class="moviesList">
             <p class="pText">${data}</p>
             <button class="deleteTask" onClick="deleteItem(${index})">x</button>
         </div>
         `
+        console.log(data)
     });
     taskListShow.innerHTML = outPut;
+    inputVal.value = '';
 }
 showList();
 
