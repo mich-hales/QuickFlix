@@ -17,6 +17,7 @@ function randomMovieOutput(movie) {
         videoSearch(youtubeApiKEy, userInput, 5)
     })
 
+    
     function videoSearch(key, search, maxResults) {
         // clears out old data
         $('#videos').empty();
