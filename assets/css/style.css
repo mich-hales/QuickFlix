@@ -38,9 +38,9 @@ nav {
     padding: 20px;
 }
 
-#youtube-header {
-    padding: 20px;
+h2 {
     font-size: 30px;
+    font-weight: bold;
 }
 
 #contact {
@@ -84,7 +84,7 @@ form {
     height: 40px;
     font-weight: bold;
     flex-wrap: wrap;
-    width: 375px;
+    width: 93%;
 }
 
 .deleteTask {
@@ -107,6 +107,7 @@ form {
 
 .pText {
     text-transform: capitalize;
+    padding-left: 3px;
 }
 
 .watchList {
@@ -121,29 +122,60 @@ form {
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-}
-
-h3 {
-    text-decoration: underline;
+    background-color: aquamarine;
+    border-radius: 10px;
+    padding: 20px;
 }
 
 .userInput {
-    width: 300px;
+    width: 75%;
     height: 40px;
+    border-radius: 5px;
 }
 
 .addListBtn {
-    width: 100px;
-    height: 35px;
+    width: 20%;
+    height: 40px;
     background-color: beige;
     font-weight: bold;
+    margin-left: 2px;
+}
+
+.inputVal {
+    margin-bottom: 10px;
 }
 
 .clear-task {
-    width: 250px;
+    width: 200px;
+    height: 40px;
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
     background-color:beige;
     margin-top: 10px;
+    padding-right: 2px;
 }
+
+.random-movie-generator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+
+.generateBtn {
+    height: 100px;
+    width: 400px;
+    font-size: 40px;
+    font-size: bold;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.hide {
+    display: none;
+}
+
+/* find me a movie button -- remove */
+/* movie trailers hide and then show */
+/* watch list hide and then show -- and keep showing */

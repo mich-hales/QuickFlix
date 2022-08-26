@@ -14,13 +14,19 @@
     <link rel="stylesheet" href="./assets/css/style.css">
   </head>
 
-  <body>
+  <!-- TO DO: -->
+  <!-- new name -->
+  <!-- color scheme -->
+  <!-- readme file -->
+  <!-- new name for application -->
+  <!-- contact us info and page? -->
+  <!-- ideas? -->
 
+  <body>
     <header>
       <!-- navbar -- can add more links (social, etc.) -->
       <nav>
         <h1>Look n Book</h1>
-        <h2>homeslice</h2>
         <a id="contact" href="#">Contact Us</a>
       </nav>
       
@@ -36,44 +42,24 @@
       </section>
     </header>
 
+    
+    <!-- main section will display the results, movie trailers, and watch list -->
     <main>
-      <!-- <div class="location-form">
-        <form id="input-form" >
-          <label>Enter Zipcode: </label>
-          <input type="text">
-          <button>Search</button>
-        </form>
-      </div> -->
-
-
       <section class="container">
-        <h1 id="youtube-header" class="text-center">Movie Trailers</h1>
-        <!-- <form id="yt-player"> -->
-          <!-- <div class="form-group">
-            <input type="text" class="form-control" id="search">
+          <div class="random-movie-generator">
+            <button class="btn btn-danger generateBtn">Find Me a Movie</button>
           </div>
-          <br>
-          <div class="form-group">
-            <input type="submit" class="btn btn-danger" value="Search">
-          </div> -->
-        <!-- </form> -->
-
-        <section class="display-results row">
-         
-  
+        
+        <section class="display-results row hide">
           <div class="col">
-            <div class="col-md-6">
-              <div id="videos" class="text-center"></div>
+            <h2 id="youtube-header" class="text-center">Movie Trailers</h2>
+            <div class="col-sm-12 col-md-6">
+              <div id="videos"></div>
             </div>
           </div>
 
-          <!-- <div class="listmovies col">
-            <h3>Watch List</h3>
-            <ul class="display-random-movie"></ul>
-          </div> -->
-
           <section class="container list-container col">
-            <h3>Watch List</h3>
+            <h2>Watch List</h2>
             <div class="watchList row">
               <div class="inputVal col-md-12">
                 <input type="text" class="userInput text-center" placeholder="add a movie">
@@ -96,8 +82,7 @@
       
     </main>
 
-    <!-- <script src="https://apis.google.com/js/api.js"></script> -->
-    <!-- <script src="https://www.youtube.com/iframe_api"></script> -->
+    <script src="https://apis.google.com/js/api.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js"></script>
