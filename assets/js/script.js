@@ -1,23 +1,20 @@
-
-
-var inputForm = document.querySelector('#input-form');
-
-
+// var inputForm = document.querySelector('#input-form');
 
 // using jquery to get api data and display a movie trailer based on input
 function randomMovieOutput(movie) {
     var youtubeApiKEy = 'AIzaSyD5JdQlIa-kgrfw-LaRZKnqT5QVKgtvt_o'
-    var video = '';
+    // var video = '';
+    console.log(movie)
 
-    $('#yt-player').submit(function(event) {
-        event.preventDefault();
+    // $('#yt-player').submit(function(event) {
+    //     event.preventDefault();
    
         //  will get the user input when the item is searched for and add the word trailer to present trailers
-        var userInput =  movie + 'trailer';
+        var userInput = movie + 'trailer';
         // $('#search').val()
 
         videoSearch(youtubeApiKEy, userInput, 5)
-    })
+    }
 
     
     function videoSearch(key, search, maxResults) {
@@ -36,9 +33,8 @@ function randomMovieOutput(movie) {
             })
         })
     }
-}
+// }
 
-randomMovieOutput();
 
     
 
@@ -57,21 +53,26 @@ randomMovieOutput();
 const inputVal = document.querySelector('.userInput');
 const addTaskBtn = document.querySelector('.addListBtn');
 
-addTaskBtn.addEventListener('click', function() {
 
-    if (inputVal.value != 0) {
-        let localItems = JSON.parse(localStorage.getItem('localItem'))
 
-        if (localItems === null) {
-            taskList = []
-        } else {
-            taskList = localItems;
+function inputMovieVal(watchlist) {
+    inputVal.value = watchlist;
+    addTaskBtn.addEventListener('click', function() {
+
+        if (inputVal.value != 0) {
+            let localItems = JSON.parse(localStorage.getItem('localItem'))
+    
+            if (localItems === null) {
+                taskList = []
+            } else {
+                taskList = localItems;
+            }
+            taskList.push(inputVal.value)
+            localStorage.setItem('localItem', JSON.stringify(taskList))
         }
-        taskList.push(inputVal.value)
-        localStorage.setItem('localItem', JSON.stringify(taskList))
-    }
-    showList();
-})
+        showList();
+    })
+}
 
 
 function showList() {
@@ -97,7 +98,7 @@ function showList() {
         console.log(data)
     });
     taskListShow.innerHTML = outPut;
-    inputVal.value = '';
+    // inputVal.value = '';
 }
 showList();
 
@@ -115,6 +116,7 @@ function clearTask() {
 }
 
 
+
 fetch(
   "https://api.themoviedb.org/3/movie/upcoming?api_key=0d83e0ad9f06857804273761b2c3701a&language=en-US&page=1"
 )
@@ -124,4 +126,6 @@ fetch(
   .then((data) => {
     var movieTitle = data.results[0].title;
     randomMovieOutput(movieTitle);
+    console.log(data)
+    inputMovieVal(movieTitle);
   });

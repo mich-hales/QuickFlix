@@ -37,53 +37,59 @@
     </header>
 
     <main>
-      <div class="location-form">
+      <!-- <div class="location-form">
         <form id="input-form" >
           <label>Enter Zipcode: </label>
           <input type="text">
           <button>Search</button>
         </form>
-      </div>
-
-
+      </div> -->
 
 
       <section class="container">
-        <h1 id="youtube-header" class="text-center">Movie Trailer</h1>
-        <form id="yt-player">
-          <div class="form-group">
+        <h1 id="youtube-header" class="text-center">Movie Trailers</h1>
+        <!-- <form id="yt-player"> -->
+          <!-- <div class="form-group">
             <input type="text" class="form-control" id="search">
           </div>
           <br>
           <div class="form-group">
             <input type="submit" class="btn btn-danger" value="Search">
-          </div>
-        </form>
+          </div> -->
+        <!-- </form> -->
 
-        <div class="row">
-          <div class="col-md-12">
-            <div id="videos" class="text-center"></div>
+        <section class="display-results row">
+         
+  
+          <div class="col">
+            <div class="col-md-6">
+              <div id="videos" class="text-center"></div>
+            </div>
           </div>
-        </div>
+
+          <!-- <div class="listmovies col">
+            <h3>Watch List</h3>
+            <ul class="display-random-movie"></ul>
+          </div> -->
+
+          <section class="container list-container col">
+            <h3>Watch List</h3>
+            <div class="watchList row">
+              <div class="inputVal col-md-12">
+                <input type="text" class="userInput text-center" placeholder="add a movie">
+                <button class="btn addListBtn">Add</button>
+              </div>
+
+              <div class="watchListItem"></div>
+
+              <button class="clear-task" onclick="clearTask()">Clear List</button>
+            </div>
+          </section>
+        </section>
+    
       </section>
 
 
-      <br><br><br>
-      <section class="container list-container">
-        <h1>Watch List</h1>
-        <div class="watchList row">
-          <div class="inputVal col-md-12">
-            <input type="text" class="userInput text-center" placeholder="add a movie">
-            <button class="btn addListBtn">Add to List</button>
-          </div>
-
-          <div class="watchListItem">
-
-          </div>
-          <button class="clear-task" onclick="clearTask()">Clear List</button>
-        </div>
-      </section>
-      <br><br><br><br><br><br><br>
 
       
       <footer>Footer goes here</footer>
