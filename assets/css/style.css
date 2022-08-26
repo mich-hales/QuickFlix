@@ -14,8 +14,7 @@ body {
 }
 
 header {
-    background-color: blue;
-    color: white;
+    background-color: pink;
 }
 
 .description {
@@ -41,12 +40,10 @@ nav {
 
 h1 {
     padding: 20px;
-    color: white;
     font-size: 30px;
 }
 
 #contact {
-    color: white;
     text-decoration: none;
     padding-right: 20px;
     font-size: 20px;

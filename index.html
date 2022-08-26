@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- need to change name -->
     <title>Look n Book</title>
     <!-- MDB -->
     <link
@@ -43,23 +44,65 @@
         </form>
       </div>
 
-      <!-- price -->
-      <!-- ratings -->
-      <!-- type of food -->
-  
+
+
+
+      <section class="container">
+        <h1 id="youtube-header" class="text-center">Movie Trailer</h1>
+        <form id="yt-player">
+          <div class="form-group">
+            <input type="text" class="form-control" id="search">
+          </div>
+          <br>
+          <div class="form-group">
+            <input type="submit" class="btn btn-danger" value="Search">
+          </div>
+        </form>
+
+        <div class="row">
+          <div class="col-md-12">
+            <div id="videos" class="text-center"></div>
+          </div>
+        </div>
+      </section>
+
+
+      <br><br><br>
+      <section class="container">
+        <h1>Watch List</h1>
+        <div class="watchList row">
+          <div class="inputVal col-md-12">
+            <input type="text" class="userInput text-center" placeholder="add a movie">
+            <button class="btn addListBtn">Add to List</button>
+          </div>
+
+          <div class="watchListItem">
+
+          </div>
+          <button class="clear-task" onclick="clearTask()">Clear List</button>
+        </div>
+      </section>
+      <br><br><br><br><br><br><br>
+
+      
+      <footer>Footer goes here</footer>
       
     </main>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.js"
-    ></script>
+
+
+    <!-- <div class="theMoviesList">
+      <p class="pText">favorite movie</p>
+      <button class="deleteTask" onclick="deleteItems(${index})">x</button>
+    </div> -->
+
+    <!-- <script src="https://apis.google.com/js/api.js"></script> -->
+    <!-- <script src="https://www.youtube.com/iframe_api"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js"></script>
     <!-- MDB -->
-    <script
-    type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.js"
-    ></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.js"></script>
     <script type="text/javascript" src="./assets/js/script.js"></script>
   </body>
 </html>
