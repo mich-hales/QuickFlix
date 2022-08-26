@@ -28,7 +28,7 @@ function randomMovieOutput(movie) {
             // for each of the YouTube videos, will create an iframe element to display the video
             data.items.forEach(item => {
                 video = `
-                <iframe width="420" height="315" src="http://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allowfullscreen></iframe>
+                <iframe width="640" height="385" src="http://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allowfullscreen></iframe>
                 `
                 // appends videos to page
                 $('#videos').append(video);
@@ -45,6 +45,7 @@ const addTaskBtn = document.querySelector('.addListBtn');
 function inputMovieVal(watchlist) {
     // takes the random movie and puts it into this function to give user an option if they want to add to their list
     inputVal.value = watchlist;
+
     addTaskBtn.addEventListener('click', function() {
         
         if (inputVal.value != 0) {
@@ -113,12 +114,19 @@ function clearTask() {
 // declares variables 
 var generateBtn = document.querySelector('.generateBtn');
 var displayResults = document.querySelector('.display-results');
+var suggestionContainer = document.querySelector('.movie-suggestion');
+var displaySuggestion = document.querySelector('#display-suggestion');
+var homeButton = document.querySelector('.home-button');
 
 
 // when 'find me a movie' button is clicked, will generate movie for user
 generateBtn.addEventListener('click', function() {
     // shows Movie Trailers section and Watch List
-    displayResults.classList.remove('hide')
+    displayResults.classList.remove('hide');
+    suggestionContainer.classList.remove('hide');
+    generateBtn.classList.add('hide');
+    homeButton.classList.remove('hide');
+
 
     fetch(
         "https://api.themoviedb.org/3/movie/upcoming?api_key=0d83e0ad9f06857804273761b2c3701a&language=en-US&page=1"
@@ -129,7 +137,17 @@ generateBtn.addEventListener('click', function() {
         .then((data) => {
           var movieTitle = data.results[0].title;
           randomMovieOutput(movieTitle);
+
           console.log(data)
           inputMovieVal(movieTitle);
+
+          // displays movie suggestion for user 
+          displaySuggestion.textContent = movieTitle;
         });    
+})
+
+// will refresh the page and take them to the beginning
+homeButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    location.reload();
 })

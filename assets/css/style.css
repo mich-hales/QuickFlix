@@ -8,7 +8,6 @@
     /* app colors here */
 }
 
-
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -29,7 +28,6 @@ header {
 #description-explanation {
     font-size: 25px;
 }
-
 
 nav {
     display: flex;
@@ -71,7 +69,6 @@ form {
     padding: 20px;
 }
 
-
 /* styling the watch list */
 .moviesList {
     background-color: pink;
@@ -81,7 +78,7 @@ form {
     align-items: center;
     padding: 5px;
     border-radius: 5px;
-    height: 40px;
+    height: auto;
     font-weight: bold;
     flex-wrap: wrap;
     width: 93%;
@@ -103,7 +100,6 @@ form {
     align-items: center;
     margin-bottom: 9px;
 }
-
 
 .pText {
     text-transform: capitalize;
@@ -135,10 +131,10 @@ form {
 
 .addListBtn {
     width: 20%;
-    height: 40px;
+    height: auto;
     background-color: beige;
     font-weight: bold;
-    margin-left: 2px;
+    text-align: center;
 }
 
 .inputVal {
@@ -176,6 +172,37 @@ form {
     display: none;
 }
 
-/* find me a movie button -- remove */
-/* movie trailers hide and then show */
-/* watch list hide and then show -- and keep showing */
+
+.movie-suggestion {
+    margin: 100px;
+}
+
+.movie-suggestion h2 {
+    font-size: 40px;
+}
+
+#display-suggestion {
+    margin-top: 20px;
+    font-size: 30px;
+    background-color: darkmagenta;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px black;
+    border-radius: 10px;
+    color: white;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+}
+
+.home-button {
+    height: 100px;
+    width: 400px;
+    font-size: 40px;
+    font-size: bold;
+    padding: 10px;
+    border-radius: 10px;
+    background-color:aquamarine;
+    margin: 30px;;
+}
