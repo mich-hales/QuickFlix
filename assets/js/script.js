@@ -1,5 +1,6 @@
 const inputVal = document.querySelector(".userInput");
 const addTaskBtn = document.querySelector(".addListBtn");
+const movieButton = document.querySelector("#random-movie");
 
 var inputForm = document.querySelector("#input-form");
 
@@ -43,7 +44,7 @@ function randomMovieOutput(movie) {
   }
 }
 
-randomMovieOutput();
+// randomMovieOutput();
 
 // local storage for random movie output -- will chose another if the same
 // storage -- stores movie ideas to a list?
@@ -108,17 +109,33 @@ function clearTask() {
   showList();
 }
 
-fetch(
-  "https://api.themoviedb.org/3/movie/upcoming?api_key=0d83e0ad9f06857804273761b2c3701a&language=en-US&page=1"
-)
-  .then((res) => {
-    return res.json();
-  })
-  .then((data) => {
-    var movieTitle =
-      data.results[Math.floor(Math.random() * data.results.length)].title;
-    console.log("Movie title: " + movieTitle);
-    randomMovieOutput(movieTitle);
-  });
-
+function chooseMovie() {
+  fetch(
+    "https://api.themoviedb.org/3/movie/upcoming?api_key=0d83e0ad9f06857804273761b2c3701a&language=en-US&page=1&poster_path"
+  )
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      var x = Math.floor(Math.random() * data.results.length);
+      var movieTitle = data.results[x].title;
+      var moviePoster = data.results[x].poster_path;
+      console.log(data);
+      console.log("Movie title: " + movieTitle);
+      //use data.results[x].posterpath and append the value onto the end of https://image.tmdb.org/t/p/original/
+      randomMovieOutput(movieTitle);
+      document
+        .querySelector("#movie-poster")
+        .setAttribute(
+          "src",
+          "https://image.tmdb.org/t/p/original/" + moviePoster
+        );
+      localStorage.setItem("alreadyChosen", movieTitle);
+    });
+}
 //add current title to watchlist
+//make the random movie button actually do something
+movieButton.addEventListener("click", chooseMovie());
+//display movie poster and/or title of retrieved random movie as text
+//prevent retrieving the same movie title again
+//

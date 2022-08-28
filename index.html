@@ -8,14 +8,13 @@
     <title>Look n Book</title>
     <!-- MDB -->
     <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.css"
-    rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.css"
+      rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
 
   <body>
-
     <header>
       <!-- navbar -- can add more links (social, etc.) -->
       <nav>
@@ -23,40 +22,48 @@
         <h2>homeslice</h2>
         <a id="contact" href="#">Contact Us</a>
       </nav>
-      
+
       <section class="flex-container">
-        <section class="description col-md-6 ">
-          <h2 id="description-header">Pick your favorite places and make reservations at the same time</h2>
-          <p id="description-explanation" >No need to go to multiple websites to find the information you need. Just take a look at the places you might be interested, and then book a reservation!</p>  
+        <section class="description col-md-6">
+          <h2 id="description-header">
+            Pick your favorite places and make reservations at the same time
+          </h2>
+          <p id="description-explanation">
+            No need to go to multiple websites to find the information you need.
+            Just take a look at the places you might be interested, and then
+            book a reservation!
+          </p>
         </section>
-  
+
         <div class="image-header">
-          <img id="glasses-books" src="./assets/looknbook.png" alt="books and glasses">
-        </div>  
+          <img
+            id="glasses-books"
+            src="./assets/looknbook.png"
+            alt="books and glasses"
+          />
+        </div>
       </section>
     </header>
 
     <main>
       <div class="location-form">
-        <form id="input-form" >
-          <label>Enter Zipcode: </label>
-          <input type="text">
-          <button>Search</button>
+        <form id="input-form">
+          <!-- <label>Enter Zipcode: </label>
+          <input type="text" /> -->
+          <button id="random-movie">Random Movie!</button>
         </form>
       </div>
-
-
-
+      <img src="" alt="The poster for your movie" id="movie-poster" />
 
       <section class="container">
         <h1 id="youtube-header" class="text-center">Movie Trailer</h1>
         <form id="yt-player">
           <div class="form-group">
-            <input type="text" class="form-control" id="search">
+            <input type="text" class="form-control" id="search" />
           </div>
-          <br>
+          <br />
           <div class="form-group">
-            <input type="submit" class="btn btn-danger" value="Search">
+            <input type="submit" class="btn btn-danger" value="Find Trailers" />
           </div>
         </form>
 
@@ -67,27 +74,26 @@
         </div>
       </section>
 
-
-      <br><br><br>
+      <br /><br /><br />
       <section class="container list-container">
         <h1>Watch List</h1>
         <div class="watchList row">
           <div class="inputVal col-md-12">
-            <input type="text" class="userInput text-center" placeholder="add a movie">
+            <input
+              type="text"
+              class="userInput text-center"
+              placeholder="add a movie"
+            />
             <button class="btn addListBtn">Add to List</button>
           </div>
 
-          <div class="watchListItem">
-
-          </div>
+          <div class="watchListItem"></div>
           <button class="clear-task" onclick="clearTask()">Clear List</button>
         </div>
       </section>
-      <br><br><br><br><br><br><br>
+      <br /><br /><br /><br /><br /><br /><br />
 
-      
       <footer>Footer goes here</footer>
-      
     </main>
 
     <!-- <script src="https://apis.google.com/js/api.js"></script> -->
@@ -96,7 +102,10 @@
     <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js"></script>
     <!-- MDB -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.js"
+    ></script>
     <script type="text/javascript" src="./assets/js/script.js"></script>
   </body>
 </html>
