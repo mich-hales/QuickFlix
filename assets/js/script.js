@@ -120,7 +120,6 @@ function chooseMovie() {
       var x = Math.floor(Math.random() * data.results.length);
       var movieTitle = data.results[x].title;
       var moviePoster = data.results[x].poster_path;
-      console.log(data);
       console.log("Movie title: " + movieTitle);
       //use data.results[x].posterpath and append the value onto the end of https://image.tmdb.org/t/p/original/
       randomMovieOutput(movieTitle);
@@ -130,9 +129,11 @@ function chooseMovie() {
           "src",
           "https://image.tmdb.org/t/p/original/" + moviePoster
         );
-      localStorage.setItem("alreadyChosen", movieTitle);
+
+      inputVal.value = movieTitle;
     });
 }
+
 //add current title to watchlist
 //make the random movie button actually do something
 movieButton.addEventListener("click", chooseMovie());

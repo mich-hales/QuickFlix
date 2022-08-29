@@ -19,7 +19,6 @@
       <!-- navbar -- can add more links (social, etc.) -->
       <nav>
         <h1>Look n Book</h1>
-        <h2>homeslice</h2>
         <a id="contact" href="#">Contact Us</a>
       </nav>
 
@@ -46,14 +45,18 @@
     </header>
 
     <main>
-      <div class="location-form">
+      <div class="location-form container">
         <form id="input-form">
           <!-- <label>Enter Zipcode: </label>
           <input type="text" /> -->
-          <button id="random-movie">Random Movie!</button>
+          <button class="btn-lg btn-danger" id="random-movie">
+            Random Movie!
+          </button>
         </form>
+        <div class="row">
+          <img src="" alt="The poster for your movie" id="movie-poster" />
+        </div>
       </div>
-      <img src="" alt="The poster for your movie" id="movie-poster" />
 
       <section class="container">
         <h1 id="youtube-header" class="text-center">Movie Trailer</h1>
@@ -63,7 +66,7 @@
           </div>
           <br />
           <div class="form-group">
-            <input type="submit" class="btn btn-danger" value="Find Trailers" />
+            <input type="submit" class="btn btn-danger" value="Show Trailers" />
           </div>
         </form>
 
