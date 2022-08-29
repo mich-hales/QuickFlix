@@ -120,7 +120,9 @@ function chooseMovie() {
       var x = Math.floor(Math.random() * data.results.length);
       var movieTitle = data.results[x].title;
       var moviePoster = data.results[x].poster_path;
+
       console.log("Movie title: " + movieTitle);
+      console.log(data);
       //use data.results[x].posterpath and append the value onto the end of https://image.tmdb.org/t/p/original/
       randomMovieOutput(movieTitle);
       document
