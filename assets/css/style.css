@@ -204,5 +204,18 @@ form {
     padding: 10px;
     border-radius: 10px;
     background-color:aquamarine;
-    margin: 30px;;
 }
+
+#movie-poster {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+#movie-description {
+    margin: 25px;
+}
+
+
+
