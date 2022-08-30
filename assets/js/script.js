@@ -5,6 +5,15 @@
 // random generator for movie api
 
 
+// declares variables 
+var generateBtn = document.querySelector('.generateBtn');
+var displayResults = document.querySelector('.display-results');
+var suggestionContainer = document.querySelector('.movie-suggestion');
+var homeButton = document.querySelector('.home-button');
+var movieDescription = document.querySelector('#movie-description');
+  
+  
+  
 
 // When 'find me a movie button' is clicked, will get data from movie api and input into this function
 function randomMovieOutput(movie) {
@@ -45,26 +54,27 @@ const addTaskBtn = document.querySelector('.addListBtn');
 function inputMovieVal(watchlist) {
     // takes the random movie and puts it into this function to give user an option if they want to add to their list
     inputVal.value = watchlist;
-
-    addTaskBtn.addEventListener('click', function() {
-        
-        if (inputVal.value != 0) {
-            let localItems = JSON.parse(localStorage.getItem('localItem'))
-    
-            if (localItems === null) {
-                taskList = []
-            } else {
-                taskList = localItems;
-            }
-            taskList.push(inputVal.value)
-            localStorage.setItem('localItem', JSON.stringify(taskList))
-        }
-        // calls the show list function
-        showList();
-        // resets input value 
-        inputVal.value = '';
-    })
 }
+
+addTaskBtn.addEventListener('click', function() {
+    console.log('helppp')
+    
+    if (inputVal.value != 0) {
+        let localItems = JSON.parse(localStorage.getItem('localItem'))
+
+        if (localItems === null) {
+            taskList = []
+        } else {
+            taskList = localItems;
+        }
+        taskList.push(inputVal.value)
+        localStorage.setItem('localItem', JSON.stringify(taskList))
+    }
+    // calls the show list function
+    showList();
+    // resets input value 
+    inputVal.value = '';
+})
 
 // shows the items on the page
 function showList() {
@@ -111,13 +121,6 @@ function clearTask() {
 }
 
 
-// declares variables 
-var generateBtn = document.querySelector('.generateBtn');
-var displayResults = document.querySelector('.display-results');
-var suggestionContainer = document.querySelector('.movie-suggestion');
-var displaySuggestion = document.querySelector('#display-suggestion');
-var homeButton = document.querySelector('.home-button');
-
 
 // when 'find me a movie' button is clicked, will generate movie for user
 generateBtn.addEventListener('click', function() {
@@ -127,23 +130,32 @@ generateBtn.addEventListener('click', function() {
     generateBtn.classList.add('hide');
     homeButton.classList.remove('hide');
 
-
     fetch(
-        "https://api.themoviedb.org/3/movie/upcoming?api_key=0d83e0ad9f06857804273761b2c3701a&language=en-US&page=1"
+        "https://api.themoviedb.org/3/movie/upcoming?api_key=0d83e0ad9f06857804273761b2c3701a&language=en-US&page=1&poster_path"
       )
         .then((res) => {
           return res.json();
         })
         .then((data) => {
-          var movieTitle = data.results[0].title;
+          var x = Math.floor(Math.random() * data.results.length);
+          var movieTitle = data.results[x].title;
+          var moviePoster = data.results[x].poster_path;
+          var movieDes = data.results[x].overview;
+          console.log("Movie title: " + movieTitle);
+          console.log(data);
+          displayResults.classList.remove('hide');
+          //use data.results[x].posterpath and append the value onto the end of https://image.tmdb.org/t/p/original/
           randomMovieOutput(movieTitle);
+          document
+            .querySelector("#movie-poster")
+            .setAttribute(
+              "src",
+              "https://image.tmdb.org/t/p/original/" + moviePoster
+            );
+          inputVal.value = movieTitle;
+          movieDescription.textContent = movieDes;
+        });
 
-          console.log(data)
-          inputMovieVal(movieTitle);
-
-          // displays movie suggestion for user 
-          displaySuggestion.textContent = movieTitle;
-        });    
 })
 
 // will refresh the page and take them to the beginning
@@ -151,3 +163,4 @@ homeButton.addEventListener('click', function(event) {
     event.preventDefault();
     location.reload();
 })
+
