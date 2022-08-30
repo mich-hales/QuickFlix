@@ -8,7 +8,6 @@
     /* app colors here */
 }
 
-
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -30,7 +29,6 @@ header {
     font-size: 25px;
 }
 
-
 nav {
     display: flex;
     align-items: center;
@@ -38,9 +36,9 @@ nav {
     padding: 20px;
 }
 
-#youtube-header {
-    padding: 20px;
+h2 {
     font-size: 30px;
+    font-weight: bold;
 }
 
 #contact {
@@ -71,7 +69,6 @@ form {
     padding: 20px;
 }
 
-
 /* styling the watch list */
 .moviesList {
     background-color: pink;
@@ -81,10 +78,10 @@ form {
     align-items: center;
     padding: 5px;
     border-radius: 5px;
-    height: 40px;
+    height: auto;
     font-weight: bold;
     flex-wrap: wrap;
-    width: 325px;
+    width: 93%;
 }
 
 .deleteTask {
@@ -104,12 +101,108 @@ form {
     margin-bottom: 9px;
 }
 
-
 .pText {
     text-transform: capitalize;
+    padding-left: 3px;
 }
 
 .watchList {
     display: flex;
     margin: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: aquamarine;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.userInput {
+    width: 75%;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.addListBtn {
+    width: 20%;
+    height: auto;
+    background-color: beige;
+    font-weight: bold;
+    text-align: center;
+}
+
+.inputVal {
+    margin-bottom: 10px;
+}
+
+.clear-task {
+    width: 200px;
+    height: 40px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color:beige;
+    margin-top: 10px;
+    padding-right: 2px;
+}
+
+.random-movie-generator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px;
+}
+
+.generateBtn {
+    height: 100px;
+    width: 400px;
+    font-size: 40px;
+    font-size: bold;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.hide {
+    display: none;
+}
+
+
+.movie-suggestion {
+    margin: 100px;
+}
+
+.movie-suggestion h2 {
+    font-size: 40px;
+}
+
+#display-suggestion {
+    margin-top: 20px;
+    font-size: 30px;
+    background-color: darkmagenta;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px black;
+    border-radius: 10px;
+    color: white;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+}
+
+.home-button {
+    height: 100px;
+    width: 400px;
+    font-size: 40px;
+    font-size: bold;
+    padding: 10px;
+    border-radius: 10px;
+    background-color:aquamarine;
+    margin: 30px;;
 }
