@@ -76,12 +76,13 @@ addTaskBtn.addEventListener('click', function() {
     inputVal.value = '';
 })
 
+var taskList = [];
 // shows the items on the page
 function showList() {
     let outPut = '';
     let taskListShow = document.querySelector('.watchListItem');  
     let localItems = JSON.parse(localStorage.getItem('localItem'));
-    var taskList = [];
+   
  
     if (localItems === null) {
         console.log('error')
