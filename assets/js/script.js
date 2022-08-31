@@ -1,10 +1,3 @@
-// TO DO:
-// readme file 
-// presentation
-// new name for application
-// random generator for movie api
-
-
 // declares variables 
 var generateBtn = document.querySelector('.generateBtn');
 var displayResults = document.querySelector('.display-results');
@@ -13,8 +6,6 @@ var homeButton = document.querySelector('.home-button');
 var movieDescription = document.querySelector('#movie-description');
   
   
-  
-
 // When 'find me a movie button' is clicked, will get data from movie api and input into this function
 function randomMovieOutput(movie) {
     // YouTube API key
@@ -30,7 +21,7 @@ function randomMovieOutput(movie) {
     function videoSearch(key, search, maxResults) {
         // clears out old data
         $('#videos').empty();
-        // requesting data from API with results that were chosen in the previous function
+        // requesting data from YouTube API with results that were chosen in the previous function
         $.get('https://www.googleapis.com/youtube/v3/search?key='+ key
         + '&type=video&part=snippet&maxResults=' + maxResults + '&q=' + search, function(data){
             console.log(data)
@@ -56,9 +47,8 @@ function inputMovieVal(watchlist) {
     inputVal.value = watchlist;
 }
 
-addTaskBtn.addEventListener('click', function() {
-    console.log('helppp')
-    
+// will add the movie suggestion to the watch list
+addTaskBtn.addEventListener('click', function() {    
     if (inputVal.value != 0) {
         let localItems = JSON.parse(localStorage.getItem('localItem'))
 
@@ -76,7 +66,9 @@ addTaskBtn.addEventListener('click', function() {
     inputVal.value = '';
 })
 
+// empty array for movie list items to be added to
 var taskList = [];
+
 // shows the items on the page
 function showList() {
     let outPut = '';
@@ -122,7 +114,6 @@ function clearTask() {
 }
 
 
-
 // when 'find me a movie' button is clicked, will generate movie for user
 generateBtn.addEventListener('click', function() {
     // shows Movie Trailers section and Watch List
@@ -131,6 +122,7 @@ generateBtn.addEventListener('click', function() {
     generateBtn.classList.add('hide');
     homeButton.classList.remove('hide');
 
+    // the movie database api 
     fetch(
         "https://api.themoviedb.org/3/movie/upcoming?api_key=0d83e0ad9f06857804273761b2c3701a&language=en-US&page=1&poster_path"
       )
@@ -138,14 +130,16 @@ generateBtn.addEventListener('click', function() {
           return res.json();
         })
         .then((data) => {
+        // randomly generates a movie suggestion
           var x = Math.floor(Math.random() * data.results.length);
+        // access the movies title, poster, and description (overview)
           var movieTitle = data.results[x].title;
           var moviePoster = data.results[x].poster_path;
           var movieDes = data.results[x].overview;
           console.log("Movie title: " + movieTitle);
           console.log(data);
           displayResults.classList.remove('hide');
-          //use data.results[x].posterpath and append the value onto the end of https://image.tmdb.org/t/p/original/
+          // use data.results[x].posterpath and append the value onto the end of https://image.tmdb.org/t/p/original/
           randomMovieOutput(movieTitle);
           document
             .querySelector("#movie-poster")
@@ -156,7 +150,6 @@ generateBtn.addEventListener('click', function() {
           inputVal.value = movieTitle;
           movieDescription.textContent = movieDes;
         });
-
 })
 
 // will refresh the page and take them to the beginning
