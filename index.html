@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuickFlix</title>
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.css" rel="stylesheet"/>
+    <!-- css style sheet -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <h1>Look n Book</h1>
+        <!-- <a id="contact" href="#">Contact Us</a> -->
+      </nav>
+      
+      <section class="flex-container">
+        <section class="description col-md-6 ">
+          <h2 id="description-header">Pick your favorite places and make reservations at the same time</h2>
+          <p id="description-explanation" >No need to go to multiple websites to find the information you need. Just take a look at the places you might be interested, and then book a reservation!</p>  
+        </section>
+  
+        <div class="image-header">
+          <img id="glasses-books" src="./assets/download.jpg" alt="books and glasses">
+        </div>  
+      </section>
+    </header>
+
+    
+    <!-- main section will display the results, movie trailers, and watch list -->
+    <main>
+      <section class="container">
+          <div class="random-movie-generator">
+            <button class="btn btn-danger generateBtn">Find Me a Movie</button>
+          </div>
+
+             <!-- home button -->
+          <div class="home">
+            <button class="btn home-button hide">Home</button>
+          </div>
+        
+          <div class="movie-suggestion hide">
+            <h2 class="text-center">Our Movie Suggestion</h2>
+            <img class="text-center" id="movie-poster">
+            <p id="movie-description" class="text-center"></p>
+          </div>
+
+        <section class="display-results row hide">
+          <div class="col">
+            <h2 id="youtube-header" class="text-center">Movie Trailers</h2>
+            <div class="col-sm-12 col-md-6">
+              <div id="videos"></div>
+            </div>
+          </div>
+
+          <section class="container list-container col">
+            <h2>Watch List</h2>
+            <div class="watchList row">
+              <div class="inputVal col-md-12">
+                <input type="text" class="userInput text-center" placeholder="add a movie">
+                <button class="btn addListBtn">Add</button>
+              </div>
+
+              <div class="watchListItem"></div>
+
+              <button class="clear-task" onclick="clearTask()">Clear List</button>
+            </div>
+          </section>
+        </section>
+    
+      </section>
+
+
+
+      
+      <footer>Footer goes here</footer>
+      
+    </main>
+
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js"></script>
+    <!-- MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.4.0/mdb.min.js"></script>
+    <script type="text/javascript" src="./assets/js/script.js"></script>
+  </body>
+</html>
