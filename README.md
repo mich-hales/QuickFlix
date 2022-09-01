@@ -32,5 +32,5 @@ This application helps users to find movies either currently in theaters, or com
 <br>
 
 ## **Mock-up** 
-![screenshot of application](./assets/_Users_michelle_homework_working_files_look-n-book_index.html.png) 
+![screenshot of application 2](./assets/screenshot-hw.png) 
 
