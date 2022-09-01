@@ -5,18 +5,16 @@
     color: black;
 }
 
-:root {
-    /* app colors here */
-}
-
 body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-nav {background-color: black}
+nav {
+    background-color: black;
+}
 
-header h1{
-    background-color: pink;
+header h1 {
+    background-color: rgb(255, 210, 218);
     font-size: 70px;
     text-align: center;
     flex-wrap: wrap;
@@ -65,10 +63,6 @@ h2 {
     text-align: right;
 }
 
-/* #contact:hover {
-    color: lightskyblue;
-} */
-
 .flex-container {
     display: flex;
 }
@@ -76,10 +70,8 @@ h2 {
 #glasses-books {
     height: 498px;
     width: 650px;
-    /* border-radius: 10px; */
-/* flex-wrap: wrap; */
-object-fit: cover;
-align-items: inherit;
+    object-fit: cover;
+    align-items: inherit;
 }
 
 form {
@@ -183,16 +175,7 @@ form {
     margin: 30px;
 }
 
-/* .generateBtn {
-    height: 100px;
-    width: 400px;
-    font-size: 40px;
-    font-size: bold;
-    padding: 10px;
-    border-radius: 10px;
-} */
-
-.generateBtn{
+.generateBtn {
     height: 100px;
     width: 400px;
     font-size: 40px;
@@ -210,13 +193,13 @@ form {
     display: none;
 }
 
-
 .movie-suggestion {
     margin: 100px;
 }
 
 .movie-suggestion h2 {
-    font-size: 40px;
+    font-size: 50px;
+    margin-bottom: 25px;
 }
 
 #display-suggestion {
