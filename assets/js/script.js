@@ -28,7 +28,7 @@ function randomMovieOutput(movie) {
             // for each of the YouTube videos, will create an iframe element to display the video
             data.items.forEach(item => {
                 video = `
-                <iframe width="640" height="385" src="http://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allowfullscreen></iframe>
+                <iframe width="640" height="385" src="https://www.youtube.com/embed/${item.id.videoId}" frameborder="0" allowfullscreen></iframe>
                 `
                 // appends videos to page
                 $('#videos').append(video);
