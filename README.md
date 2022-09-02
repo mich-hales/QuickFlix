@@ -12,7 +12,6 @@ This application helps users to find movies either currently in theaters, or com
 * The random movie suggestion will also automatically appear in the watch list for the user to choose to add, or forgo. 
 * When the add button on the watch list is clicked, it will add it to the watch list and add it to local storage. 
 * When the 'x' next to the movie suggestion on the list is clicked, it will delete it from the list, along with remove it from local storage. 
-* When the clear list button is clicked, it will clear the entire list along with all the local storage. 
 * When the home button is clicked, the user is taken back to the main page where they can get another movie suggestion. 
 * When the user gets another movie suggestion, their watch list movies from local storage will still be there, if they have not been cleared.  
 <br>
