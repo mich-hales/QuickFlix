@@ -108,10 +108,10 @@ function deleteItem(index) {
 }
 
 // calls clearTask function (which is called in html document) and will clear local storage and the list
-function clearTask() {
-    localStorage.clear();
-    showList();
-}
+// function clearTask() {
+//     localStorage.clear();
+//     showList();
+// }
 
 
 // when 'find me a movie' button is clicked, will generate movie for user
