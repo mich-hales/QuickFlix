@@ -133,6 +133,14 @@ generateBtn.addEventListener('click', function() {
         // randomly generates a movie suggestion
           var x = Math.floor(Math.random() * data.results.length);
         // access the movies title, poster, and description (overview)
+        for (i = 0; i < data.results.length; i++) {
+            // console.log(data.results[i].overview);
+            var movieData = {};
+            movieData.title = data.results[i].title;
+            movieData.id = data.results[i].id;
+            movieData.posterPath = data.results[i].poster_path;
+            movieArray.push(movieData);
+            console.log(movieArray);
           var movieTitle = data.results[x].title;
           var moviePoster = data.results[x].poster_path;
           var movieDes = data.results[x].overview;
